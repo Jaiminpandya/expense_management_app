@@ -1,0 +1,28 @@
+<h1>Listing Quantities</h1>
+
+<table>
+<% @quantities.each do |quantity| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+  <td class="list_description">
+   <dl>
+     <dt><%= quantity.title %></dt>
+   </dl>
+  </td>
+
+
+
+  <td class="list_actions">
+    <%= link_to 'Show', quantity %><br/>
+    <%= link_to 'Edit', edit_quantity_path(quantity) %><br/>
+    <%= link_to 'Destroy', quantity, method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </td>
+
+ </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quantity', new_quantity_path %>

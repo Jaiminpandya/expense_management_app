@@ -1,4 +1,7 @@
 ExpenseManagement::Application.routes.draw do
+  resources :quantities
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
