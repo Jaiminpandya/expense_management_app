@@ -1,7 +1,14 @@
+
 <h1>Listing Quantities</h1>
 
+
 <table>
-<% @quantities.each do |quantity| %>
+
+    <tr>
+    <th>Name of Quantities</th>
+    <th></th>
+    </tr> 
+ <% @quantities.each do |quantity| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
   <td class="list_description">
