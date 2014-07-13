@@ -3,6 +3,10 @@ require 'test_helper'
 class QuantitiesControllerTest < ActionController::TestCase
   setup do
     @quantity = quantities(:one)
+    @update = {
+       title:    'Lorem Ipsum',
+       price:     21.29
+     }
   end
 
   test "should get index" do
@@ -18,9 +22,9 @@ class QuantitiesControllerTest < ActionController::TestCase
 
   test "should create quantity" do
     assert_difference('Quantity.count') do
-      post :create, quantity: { price: @quantity.price, title: @quantity.title }
+      post :create, quantity: @update
     end
-
+  
     assert_redirected_to quantity_path(assigns(:quantity))
   end
 
@@ -35,7 +39,7 @@ class QuantitiesControllerTest < ActionController::TestCase
   end
 
   test "should update quantity" do
-    put :update, id: @quantity, quantity: { price: @quantity.price, title: @quantity.title }
+    put :update, id: @quantity, quantity: @update
     assert_redirected_to quantity_path(assigns(:quantity))
   end
 

@@ -7,3 +7,7 @@ one:
 two:
   title: MyString
   price: 9.99
+
+expenses:
+   title:  Vegitables
+   price:  485.00
