@@ -26,11 +26,21 @@ class QuantityTest < ActiveSupport::TestCase
      assert quantity.valid?
    end
 
-   test "quantity is not valid without a unique title" do 
+   test "quantity is not valid without a unique title " do 
      quantity = Quantity.new( title:    quantities(:expenses).title,
                               price:    1)
+
      assert quantity.invalid?
      assert_equal ["has already been taken"], quantity.errors[:title]
    end
-end
+   
+    test "title is at least 8 characters long" do
+       quantity = Quantity.new(:price =>  1)
+     
+   
+    quantity.title = "This is"
+    assert quantity.invalid?
+    assert_equal ["must be eight characters long."], quantity.errors[:title] 
+   end
+ end
    
