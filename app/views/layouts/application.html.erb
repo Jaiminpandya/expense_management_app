@@ -8,7 +8,30 @@
 </head>
 <body class='<%= controller.controller_name %>'>
 
-<%= yield %>
+<div id="banner">
+  <%= @page_title || "Expense Management" %>
+</div>
+<div id="columns">
+ <div id="side">
+   <div id="time">
+      <%= Time.now %>
+    </div>
+  <ul>
+    <li><a href="http://www....">Home</a></li>
+    <p></p>
+    <li><a href="http://www..../faq">Questions</a></li>
+     <p></p>
+    <li><a href="http://www..../news">News</a></li>
+     <p></p>
+    <li><a href="http://www..../contact">Contact</a></li>
+     <p></p>
+  </ul>
+ </div>
 
+   <div id="main">
+     <%= yield %>
+   </div>
+  </div>
 </body>
 </html>
+

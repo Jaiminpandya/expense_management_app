@@ -8,7 +8,7 @@
 
 Quantity.delete_all
 #..........
-Quantity.create(title: 'Vegitables',
+Quantity.create(title: 'Vegetables',
    price: 485.00)
 #..........
 Quantity.create(title: 'Milk related products',

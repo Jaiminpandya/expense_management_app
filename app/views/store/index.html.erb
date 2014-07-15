@@ -1,0 +1,15 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+
+<h1>Listing Quantities</h1>
+
+<% @quantities.each do |quantity| %>
+  <div class="entry">
+    <h3><%= quantity.title %></h3>
+      <div class="price_line">
+         <span class="price"><%= number_to_currency(quantity.price, :unit => "Rs. " ) %></span>
+      </div>
+  </div>
+<% end %>
