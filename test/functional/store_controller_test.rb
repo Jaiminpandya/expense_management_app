@@ -8,7 +8,8 @@ class StoreControllerTest < ActionController::TestCase
     assert_select '#main .entry', 3
     assert_select 'h3', 'Vegetables'
     assert_select '.price', 'Rs. 485.00'
+    assert_select 'form input', 0
+    assert_select "title", "ExpenseManagement"
 
   end
-
 end
