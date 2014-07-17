@@ -10,6 +10,20 @@
   <%= @quantity.price %>
 </p>
 
+<p>
+  <b>Day:</b>
+  <%= @quantity.day %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @quantity.month %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @quantity.year %>
+</p>
 
 <%= link_to 'Edit', edit_quantity_path(@quantity) %> |
 <%= link_to 'Back', quantities_path %>

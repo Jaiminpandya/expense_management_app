@@ -4,6 +4,7 @@
   <title>ExpenseManagement</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
@@ -23,10 +24,10 @@
      <p></p>
     <li><a href="http://www.homemoneymanager.com/contactus.html">Contact Us</a></li>
     <p></p>
+    <li><a>Report</a></li>
+    <p></p>
   </ul>
  </div>
-
-
    <div id="main">
      <%= yield %>
    </div>

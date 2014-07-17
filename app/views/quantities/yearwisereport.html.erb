@@ -1,0 +1,16 @@
+<h2>Year wise report  on expense</h2>
+
+<table>
+
+    <tr class="date">
+    <th>Name of Quantity</th>
+    <th>year</th>
+    </tr> 
+<% @quantities.each do |quantity| %>
+   <tr class="list">
+     <td><%= quantity.title %></td>
+     <td><%= quantity.year %></td>
+   </tr>
+  
+<% end %>
+</table>

@@ -1,0 +1,16 @@
+<h2>Date and Time wise report  on expense</h2>
+
+<table>
+
+    <tr class="date">
+    <th>Name of Quantity</th>
+    <th>Date</th>
+    </tr> 
+<% @quantities.each do |quantity| %>
+   <tr class="list">
+     <td><%= quantity.title %></td>
+     <td><%= quantity.created_at %></td>
+   </tr>
+  
+<% end %>
+</table>

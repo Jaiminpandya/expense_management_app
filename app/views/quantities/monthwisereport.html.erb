@@ -1,0 +1,16 @@
+<h2>Month wise report  on expense</h2>
+
+<table>
+
+    <tr class="date">
+    <th>Name of Quantity</th>
+    <th>Month</th>
+    </tr> 
+<% @quantities.each do |quantity| %>
+   <tr class="list">
+     <td><%= quantity.title %></td>
+     <td><%= quantity.month %></td>
+   </tr>
+  
+<% end %>
+</table>

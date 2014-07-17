@@ -2,9 +2,11 @@ class QuantitiesController < ApplicationController
   # GET /quantities
   # GET /quantities.json
   def index
-    @quantities = Quantity.all
+   
+  @quantities  = Quantity.all
+    
 
-    respond_to do |format|
+  respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @quantities }
     end
@@ -79,5 +81,21 @@ class QuantitiesController < ApplicationController
       format.html { redirect_to quantities_url }
       format.json { head :no_content }
     end
+  end
+  
+  def withdatetime
+   @quantities  = Quantity.order("created_at")
+  end
+
+  def daywisereport
+    @quantities  = Quantity.order("day")
+  end
+
+  def monthwisereport
+   @quantities  = Quantity.order("month")
+  end
+
+  def yearwisereport
+    @quantities  = Quantity.order("year")
   end
 end

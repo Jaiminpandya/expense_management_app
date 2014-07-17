@@ -5,7 +5,10 @@ class QuantitiesControllerTest < ActionController::TestCase
     @quantity = quantities(:one)
     @update = {
        title:    'Lorem Ipsum',
-       price:     21.29
+       price:     21.29,
+       day:      'Monday',
+       month:    'January', 
+       year:     2014
      }
   end
 
@@ -46,8 +49,9 @@ class QuantitiesControllerTest < ActionController::TestCase
   test "should destroy quantity" do
     assert_difference('Quantity.count', -1) do
       delete :destroy, id: @quantity
-    end
+     end
 
     assert_redirected_to quantities_path
   end
 end
+

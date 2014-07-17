@@ -8,10 +8,16 @@ class QuantityTest < ActiveSupport::TestCase
   assert quantity.invalid?
   assert quantity.errors[:title].any?
   assert quantity.errors[:price].any?
+  assert quantity.errors[:day].any?
+  assert quantity.errors[:month].any?
+  assert quantity.errors[:year].any?
  end
 
   test "quantity price must be positive" do 
-    quantity = Quantity.new(title:  "My book Title" )
+    quantity = Quantity.new(title:  "My book Title",
+                            day: "Monday",
+                            month: "January",
+                            year: 2014 )
     quantity.price= -1
     assert quantity.invalid?
     assert_equal ["must be greater than or equal to 0.01"],
@@ -24,6 +30,7 @@ class QuantityTest < ActiveSupport::TestCase
 
      quantity.price= 1
      assert quantity.valid?
+     
    end
 
    test "quantity is not valid without a unique title " do 
@@ -35,7 +42,7 @@ class QuantityTest < ActiveSupport::TestCase
    end
    
     test "title is at least 8 characters long" do
-       quantity = Quantity.new(:price =>  1)
+       quantity = Quantity.new(price:  1)
      
    
     quantity.title = "This is"

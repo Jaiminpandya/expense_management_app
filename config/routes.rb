@@ -1,8 +1,16 @@
 ExpenseManagement::Application.routes.draw do
   get "store/index"
 
-  resources :quantities
+  resources :quantities do
+    collection do
+    get 'withdatetime'
+    get 'daywisereport'
+    get 'monthwisereport'
+    get 'yearwisereport'
+   end
+  end
 
+  get "store/report"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
