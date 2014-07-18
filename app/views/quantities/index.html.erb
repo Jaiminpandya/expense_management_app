@@ -1,10 +1,17 @@
-
 <h1>Listing Quantities</h1>
+
+<%= form_tag quantities_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <table>
 
     <tr>
-    <th>Name of Quantities</th>
-    <th></th>
+      <th>Name of Quantities</th>
+      <th></th>
     </tr> 
  <% @quantities.each do |quantity| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
@@ -32,3 +39,5 @@
 <br />
 
 <%= link_to 'New quantity', new_quantity_path %>
+
+

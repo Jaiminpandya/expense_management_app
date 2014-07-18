@@ -17,6 +17,16 @@ class Quantity < ActiveRecord::Base
    scope :monthlyreport, day.order("month desc") 
 
    scope :year, lambda { where("year <= ?", 1.year.from_now )}
-   scope :yearyreport, day.order("year desc")  
+   scope :yearyreport, day.order("year desc")
+
+   
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['month LIKE ?', "%#{search}%"])
+    else
+     find(:all)
+   end
+ end
 end
 
