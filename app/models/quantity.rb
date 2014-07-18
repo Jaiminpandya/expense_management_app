@@ -23,10 +23,11 @@ class Quantity < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['month LIKE ?', "%#{search}%"])
-    else
+      find(:all, :conditions => ['month || day || year LIKE ?', "%#{search}%"])
+      else
      find(:all)
-   end
- end
-end
+      end
+     end
+  end
+
 

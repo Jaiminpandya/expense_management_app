@@ -2,8 +2,7 @@ class QuantitiesController < ApplicationController
   # GET /quantities
   # GET /quantities.json
   def index
-   
-  @quantities = Quantity.search(params[:search])
+    @quantities = Quantity.search(params[:search])
 
   respond_to do |format|
       format.html # index.html.erb
