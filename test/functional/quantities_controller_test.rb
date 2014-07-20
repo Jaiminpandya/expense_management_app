@@ -9,7 +9,7 @@ class QuantitiesControllerTest < ActionController::TestCase
        day:      'Monday',
        month:    'January', 
        year:     '2014',
-       expense_on: 'mm/dd/yyyy',
+       expense_on: 'mm/dd/yyyy'
      }
   end
 

@@ -11,15 +11,15 @@ class QuantityTest < ActiveSupport::TestCase
   assert quantity.errors[:day].any?
   assert quantity.errors[:month].any?
   assert quantity.errors[:year].any?
-  assert quantity.errors[:expense_on].any?
+  
  end
 
   test "quantity price must be positive" do 
     quantity = Quantity.new(title:  "My book Title",
                             day: "Monday",
                             month: "January",
-                            year: 2014,
-                            expense_on: "14/07/2014 ")
+                            year: 2014
+                           )
     quantity.price= -1
     assert quantity.invalid?
     assert_equal ["must be greater than or equal to 0.01"],
@@ -40,8 +40,8 @@ class QuantityTest < ActiveSupport::TestCase
                               price:    1,
                               day: "Monday",
                               month: "January",
-                              year: 2014,
-                              expense_on: "14/07/2014 " )
+                              year: 2014
+                               )
 
      assert quantity.invalid?
      assert_equal ["has already been taken"], quantity.errors[:title]
