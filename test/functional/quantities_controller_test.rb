@@ -8,7 +8,8 @@ class QuantitiesControllerTest < ActionController::TestCase
        price:     21.29,
        day:      'Monday',
        month:    'January', 
-       year:     2014
+       year:     '2014',
+       expense_on: '07/16/2014',
      }
   end
 
@@ -24,7 +25,7 @@ class QuantitiesControllerTest < ActionController::TestCase
   end
 
   test "should create quantity" do
-    assert_difference('Quantity.count') do
+     assert_difference('Quantity.count') do
       post :create, quantity: @update
     end
   

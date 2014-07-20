@@ -3,7 +3,7 @@
 one:
   title: MyString
   price: 9.99
-
+ 
 two:
   title: MyString
   price: 9.99
@@ -11,3 +11,4 @@ two:
 expenses:
    title:  Vegetables
    price:  485.00
+   
