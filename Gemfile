@@ -22,9 +22,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '1.2.3'
+   gem 'jquery-ui-rails'
 end
 
-gem 'jquery-rails', '< 3.0.0'
+gem 'jquery-rails'
+gem 'jquery_datepicker', '~> 0.4'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
