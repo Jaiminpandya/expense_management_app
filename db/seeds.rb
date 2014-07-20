@@ -13,7 +13,7 @@ Quantity.create(title: 'Vegetables',
    day: 'Monday',
    month: 'June',
    year: 2014,
-   expense_on: '12/07/2014'
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Milk related products',
@@ -21,14 +21,15 @@ Quantity.create(title: 'Milk related products',
    day: 'Monday',
    month: 'June',
    year: 2014,
-   expense_on: '12/07/2014'
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Petrol',
     price: 485.00,
    day: 'Tuesday',
    month: 'July',
-   year: 2014
+   year: 2014,
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Light Bill',
@@ -36,7 +37,7 @@ Quantity.create(title: 'Light Bill',
    day: 'Tuesday',
    month: 'July',
    year: 2014,
-   expense_on: '12/07/2014'
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Gas Bill',
@@ -44,7 +45,7 @@ Quantity.create(title: 'Gas Bill',
    day: 'Monday',
    month: 'May',
    year: 2014,
-   expense_on: '12/07/2014'
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Internet Bill',
@@ -52,7 +53,7 @@ Quantity.create(title: 'Internet Bill',
    day: 'Saturday',
    month: 'January',
    year: 2014,
-   expense_on: '12/07/2014'
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Investment money',
@@ -60,7 +61,7 @@ Quantity.create(title: 'Investment money',
    day: 'Sunday',
    month: "January",
    year: 2014,
-   expense_on: '12/07/2014'
+   expense_on: '07/12/2014'
    )
 #..........
 Quantity.create(title: 'Water bill',
@@ -68,7 +69,7 @@ Quantity.create(title: 'Water bill',
                 day: 'Thursday',
                 month: 'July',
                 year: 2014,
-                expense_on: '12/07/2014'
+               expense_on: '07/12/2014'
                )
 #...........
 Quantity.create(title: 'Hotel bill',
@@ -76,6 +77,6 @@ Quantity.create(title: 'Hotel bill',
                 day: 'Thursday',
                 month: 'July',
                 year: 2014,
-                expense_on: '12/07/2014'
+                expense_on: '07/12/2014'
                )
 #...........
