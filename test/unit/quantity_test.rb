@@ -19,7 +19,7 @@ class QuantityTest < ActiveSupport::TestCase
                             day: "Monday",
                             month: "January",
                             year: 2014,
-                            expense_on: "14/07/2014")
+                            expense_on: "14/07/2014 ")
     quantity.price= -1
     assert quantity.invalid?
     assert_equal ["must be greater than or equal to 0.01"],
@@ -41,7 +41,7 @@ class QuantityTest < ActiveSupport::TestCase
                               day: "Monday",
                               month: "January",
                               year: 2014,
-                              expense_on: "14/07/2014" )
+                              expense_on: "14/07/2014 " )
 
      assert quantity.invalid?
      assert_equal ["has already been taken"], quantity.errors[:title]
