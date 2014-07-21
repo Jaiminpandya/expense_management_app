@@ -93,6 +93,7 @@ class QuantitiesController < ApplicationController
    @quantities  = Quantity.order("month")
   end
 
- 
-  
+  def yearwisereport
+   @quantities  = Quantity.order("year") 
+ end
 end
