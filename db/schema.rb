@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140720063348) do
+ActiveRecord::Schema.define(:version => 20140721120852) do
 
   create_table "quantities", :force => true do |t|
     t.string   "title"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20140720063348) do
     t.string   "day"
     t.string   "month"
     t.string   "year"
-    t.date     "expense_on"
+    t.string   "expense_on"
   end
 
 end

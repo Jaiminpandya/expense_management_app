@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/watu/table_builder.git
+  revision: f0ee3263c816005566e2ea06b107eb1e954c5f3c
+  specs:
+    watu_table_builder (0.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -117,3 +123,4 @@ DEPENDENCIES
   sass-rails (= 3.2.5)
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
+  watu_table_builder!

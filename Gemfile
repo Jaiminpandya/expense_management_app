@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 gem 'rails', '3.2.16'
 gem 'bootstrap-sass', '2.1'
+gem "watu_table_builder", :require => "table_builder", :git => "git://github.com/watu/table_builder.git"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

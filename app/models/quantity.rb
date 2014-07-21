@@ -19,14 +19,14 @@ class Quantity < ActiveRecord::Base
    scope :year, lambda { where("year <= ?", 1.year.from_now )}
    scope :yearyreport, day.order("year desc")
 
-   
-
+ 
   def self.search(search)
     if search
-      find(:all, :conditions => ['month || day || year LIKE ?', "%#{search}%"])
-      else
-     find(:all)
+      find(:all, :conditions => ['expense_on LIKE ?', "%#{search}%"])
+     else
+       find(:all)
       end
+     
      end
   end
 
