@@ -94,11 +94,12 @@
 .center {
   text-align: justify;
   margin-top: 60px;
-}
+
 
 .btn-large {
         list-style-type: none;
         color: white;
+        background-color:#8AC007;
         font-family:verdana,helvetica,arial,sans-serif; 
         font-size: 18px; 
         text-align: justify;
@@ -107,10 +108,9 @@
         width: 200px;
         border-radius: 5px;
         white-space: nowrap;
-        background-color: transparent;
         padding: 3px 10px 5px;
 }
-
+}
 /* footer */
 
 footer {
