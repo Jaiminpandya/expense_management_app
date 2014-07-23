@@ -1,4 +1,11 @@
 ExpenseManagement::Application.routes.draw do
+  resources :line_items
+  root to: 'quantities#home'
+
+
+  resources :expensescounters
+
+
   get "store/index"
 
   resources :quantities do

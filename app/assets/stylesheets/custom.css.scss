@@ -21,6 +21,7 @@
    background:#EBEBEB;
 
    #main {
+    margin-top: 40px;
     margin-left: 17em;
     padding: 1em;
     background: #EBEBEB;
@@ -58,5 +59,74 @@
     }
    }
   }
+}
+
+/* design of Home, signin button top side */
+
+.nav-pills > li {
+  float: right;
+  list-style-type: none;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: #ffffff;
+  background-color: #0088cc;
+  width: 50px;
+}
+
+.nav-pills > li > a {
+    list-style-type: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    margin-right: 2px;
+    line-height: 14px;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;
+    
+    
+}
+
+/* Design of home.html.erb */
+
+.center {
+  text-align: justify;
+  margin-top: 60px;
+}
+
+.btn-large {
+        list-style-type: none;
+        color: white;
+        font-family:verdana,helvetica,arial,sans-serif; 
+        font-size: 18px; 
+        text-align: justify;
+        text-decoration: none;
+        margin-bottom: 5px;
+        width: 200px;
+        border-radius: 5px;
+        white-space: nowrap;
+        background-color: transparent;
+        padding: 3px 10px 5px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+}
+
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
 }
 

@@ -45,6 +45,10 @@
   p, div.price_line,h3 {
    text-align: left;
    padding-top: 5px; 
+
+   form, div {
+    display: inline;
+   }
   }
 
   .price {

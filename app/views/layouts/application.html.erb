@@ -10,30 +10,18 @@
    
     
     <%= csrf_meta_tags %>
+    <%= render 'layouts/shim'%>
 </head>
 <body class='<%= controller.controller_name %>'>
 
 <div id="banner">
   <%= @page_title || "Expense Management" %>
 </div>
-<div id="columns">
- <div id="side">
-    
-  <ul>
-    <li><a href="http://expense-management-app.herokuapp.com/">Home</a></li>
-     <p></p>
-    <li><a href="http://timesofindia.indiatimes.com/life-style/relationships/work/Manage-your-money-smartly/articleshow/12729326.cms">Help & Support</a></li>
-     <p></p>
-    <li><a href="http://www.homemoneymanager.com/aboutus.html">About Us</a></li>
-     <p></p>
-    <li><a href="http://www.homemoneymanager.com/contactus.html">Contact Us</a></li>
-    <p></p>
-    <li><a href="http://expense-management-app.herokuapp.com/store/report">Report</a></li>
-    <p></p>
-  </ul>
- </div>
+
+ <%= render 'layouts/header2' %>	
    <div id="main">
      <%= yield %>
+     <%= render 'layouts/footer' %>	 
    </div>
   </div>
 </body>

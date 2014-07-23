@@ -96,4 +96,7 @@ class QuantitiesController < ApplicationController
   def yearwisereport
    @quantities  = Quantity.order("year") 
  end
+
+ def home
+  end
 end

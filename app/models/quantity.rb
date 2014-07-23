@@ -1,4 +1,6 @@
 class Quantity < ActiveRecord::Base
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
   attr_accessible :price, :title, :day, :month, :year, :expense_on
   validates :day, :month, :year, presence: true
   validates :title, presence: true, length: { minimum: 8, message: 'must be eight characters long.'}
@@ -26,8 +28,19 @@ class Quantity < ActiveRecord::Base
      else
        find(:all)
       end
-     
-     end
+   end
+
+  
+private
+
+  def ensure_not_referenced_by_any_line_item
+    if line_items.empty?
+      return true
+    else
+      errors.add(:base, 'Line Items present')
+      return false
+    end
   end
+end
 
 

@@ -1,0 +1,12 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Expenses counter</h2>
+<ul>
+  <% @expensescounter.line_items.each do |item| %>
+    <li><%= item.quantity.title %></li>
+  <% end %>
+</ul>
+
+

@@ -1,0 +1,21 @@
+<h1>Listing expensescounters</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expensescounters.each do |expensescounter| %>
+  <tr>
+    <td><%= link_to 'Show', expensescounter %></td>
+    <td><%= link_to 'Edit', edit_expensescounter_path(expensescounter) %></td>
+    <td><%= link_to 'Destroy', expensescounter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expensescounter', new_expensescounter_path %>
