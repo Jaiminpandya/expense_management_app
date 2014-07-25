@@ -18,6 +18,10 @@
   <%= @page_title || "Expense Management" %>
 </div>
 
+<div class = "date1">
+  <%= Time.now.strftime("%d %b. %Y") %>
+</div>
+
   <%= render 'layouts/header2' %>
    <div id="main">
      <%= yield %>

@@ -20,13 +20,13 @@
   }
 
 #columns {
-   background:#EBEBEB;
+   background-color:#C0C0C0;
 
    #main {
     margin-top: 40px;
     margin-left: 17em;
     padding: 1em;
-    background: #EBEBEB;
+    background-color: #C0C0C0;
   }
 
   #side {
@@ -92,7 +92,7 @@
 /* Design of home.html.erb */
 
 .container { 
-    margin-top: 100px;
+    margin-top: 60px;
    border-style:none;
    background-color: #E5EECC;
     }
@@ -106,7 +106,7 @@
     width: 70%;
     border-right: 1px dashed #CCC;
     margin-top: 100px;
-    background-color:white;
+    background-color:#B0B0B0 ;
     color: black;
      
    }
@@ -195,4 +195,7 @@ footer ul li {
   margin-right: 8px;
 }
 
-
+.date1 { 
+     color: #42007A; 
+     font-weight: bold;
+   }
