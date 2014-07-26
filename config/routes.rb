@@ -1,4 +1,7 @@
 ExpenseManagement::Application.routes.draw do
+  match '/signup', to: 'users#new'
+  resources :users
+
   resources :line_items
   root to: 'quantities#home'
 

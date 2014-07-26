@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 #banner {
    border-radius: 6px 6px 0px 0px;
    background-color: #08C;
@@ -92,28 +94,36 @@
 /* Design of home.html.erb */
 
 .container { 
-    margin-top: 60px;
-   border-style:none;
-   background-color: #E5EECC;
+    height: 70%;
+    border-style:none;
+    background-color: white;
+    width: 100%;
     }
  .table1  { 
      border-collapse:collapse;
      border: 0.25px dashed #CCC;
      border-style:none;
+     margin-top: 60px;
+
    }
- .table1  .tableleft  {
+ .table1  .tableleft   {
     border-color: white;
     width: 70%;
     border-right: 1px dashed #CCC;
-    margin-top: 100px;
+    margin-top: 70px;
     background-color:#B0B0B0 ;
     color: black;
-     
-   }
+  }
+ 
+  .tableleft { 
+      width: 60%;
+     }
 
   .tableright  { 
       background-color: white;
       color: black;
+      margin-right: 10px;
+      width: 40%;
    }
  .tr1  {
    padding: 550px;
@@ -199,3 +209,84 @@ footer ul li {
      color: #42007A; 
      font-weight: bold;
    }
+
+/* miscellaneous */
+
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  max-width: 50%;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
