@@ -186,7 +186,7 @@
 footer {
    border-radius: 6px 6px 0px 0px;
   margin-top: 90px;
-  padding-top: 5px;
+  padding-top: 1px;
   border-top: 1px solid #eaeaea;
   background-color: #6BA8DF;
 }
@@ -198,9 +198,9 @@ footer ul {
 }
 
 footer ul li {
-  padding-left: 15px;
-  border-radius: 6px 6px 0px 0px;
-  background-color: #00CED1;
+  padding-left: 10px;
+  border-radius: 3px 3px 0px 0px;
+  background-color: #E0B2B2;
   float: right;
   margin-right: 8px;
 }
@@ -259,19 +259,44 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
-  max-width: 50%;
+  width: 13%;
+  height: 13%;
 }
 
 /* forms */
+
+.heading1 { 
+    font-size: 25px;
+    color:  #B075BD;
+    margin-left: 18px;
+  }
+
+.paragraph { 
+     color: #5B5B5B;
+     margin-left: 18px;
+    }
+
+.row { 
+    text-align: left;
+    margin-left: 10px;
+   }
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
+  text-align: left;
+  margin-left: 10px;
   @include box_sizing;
 
 }
+
+.signup h2 { 
+    font-size: 20px;
+    text-align: left;
+    margin-left: 25px;
+   }
 
 input {
   height: auto !important;
@@ -290,3 +315,18 @@ input {
   @extend .error;
 }
 
+/*After sign up page  */
+.para1 { 
+   margin-left: 20px;
+
+  .email1 { 
+    color: #5A004C;
+    font-weight: bold;
+    display: inline;
+    }
+  }
+
+ .container { 
+     background-color:#FFECF6;
+     margin-top: 20px;
+   }
