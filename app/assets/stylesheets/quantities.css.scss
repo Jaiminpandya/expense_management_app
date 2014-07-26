@@ -2,18 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#main { 
+
+     width: 99.5%;
+    }
+
 .quantities {
+     width: 100%;
+     padding-right: -40px;
 
    tr {
       text-align: left;
       color: white;
       background-color: #660000;
-      font-size: 2em;
+      font-size: 1.5em;
    }
 
    h1 { 
     text-align:center;
-    font-size: 4em;
+    font-size: 2.6em;
     margin: 0.67em 0;
     font-family: sans-serif;
     text-transform: uppercase;
@@ -32,9 +39,11 @@
 
   .list_description {
      width: 120%;
+       margin-left: 10px;
+     
 
      dl {
-       margin: 0;
+       margin-left: 10px;
      }
 
      dt {
@@ -42,6 +51,7 @@
        font-weight:Sans-serif;
        font-size:medium;
        color: #6666FF;
+        margin-left: 10px;
     }
  }
 
@@ -50,14 +60,15 @@
     text-align: right;
     padding-left: 1em;
     font-family: sans-serif;
+    color: black;
   }
 
   .list_line_even { 
-    background: white;
+    background: #C7A4BD;
    }
  
    .list_line_odd {
-     background: #99CCFF;
+     background: #C6C3CE;
    }
   
    .date { 
@@ -71,4 +82,21 @@
      background-color: #D4D4D4;
      font-size: 1.5em; 
     }
-  }
+
+    .field { 
+       width: 25%;
+      .datepicker { 
+         width: 98%;
+        }
+      }
+
+     .backto { 
+      color: black;
+     }
+    }
+
+ .datepicker { 
+       width: 25%;
+       }
+
+  
