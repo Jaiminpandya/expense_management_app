@@ -10,7 +10,11 @@
     <h3><%= quantity.title %></h3>
       <div class="price_line">
          <span class="price"><%= number_to_currency(quantity.price, :unit => "Rs. " ) %></span>
-         <%= button_to 'Add to count', line_items_path(quantity_id: quantity) %>
+         <div class="outer">
+           <div class="inner">
+             <%= button_to 'Add to count', line_items_path(quantity_id: quantity) %>
+            </div>
+         </div>
       </div>
   </div>
 <% end %>

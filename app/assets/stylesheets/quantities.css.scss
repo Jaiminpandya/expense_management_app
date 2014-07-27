@@ -15,7 +15,7 @@
       text-align: left;
       color: white;
       background-color: #660000;
-      font-size: 1.5em;
+      font-size: 1em;
    }
 
    h1 { 
@@ -29,17 +29,20 @@
  
  table, td, th {
      border:1px solid black; 
-     padding:2px;
+     padding: 0px;
    }
 
   table tr td {
-  cellpadding: 5px;
+  cellpadding: 2px;
   vertical-align: top;
+  padding: -5px;
+  
   }
 
   .list_description {
-     width: 120%;
-       margin-left: 10px;
+       width: 100%;
+       margin-left: 20px;
+       padding: 0px;
      
 
      dl {
