@@ -1,8 +1,12 @@
 ExpenseManagement::Application.routes.draw do
+  get "users/new"
   match '/signup', to: 'users#new'
   resources :users
 
   resources :line_items
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   root to: 'quantities#home'
 
 
@@ -10,6 +14,7 @@ ExpenseManagement::Application.routes.draw do
 
 
   get "store/index"
+  match '/manageexpense', to: 'store#index'
 
   resources :quantities do
     collection do
