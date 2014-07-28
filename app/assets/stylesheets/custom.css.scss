@@ -3,12 +3,11 @@
 #banner {
    border-radius: 6px 6px 0px 0px;
    background-color: #08C;
-   padding: 1px;
+   padding: 5px;
    border-bottom: 1px solid;
    font: small-caps 40px/40px "Times New Roman", serif;
    color: white;
-   text-align: center;
-  
+   text-align: center;  
  }
   
 
@@ -25,7 +24,7 @@
    background-color:#C0C0C0;
 
    #main {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-left: 17em;
     padding: 1em;
     background-color: #C0C0C0;
@@ -303,6 +302,7 @@ input {
 }
 
 #error_explanation {
+
   color: #f00;
   ul {
     list-style: none;
@@ -344,11 +344,12 @@ input {
 
   .navbar-inner { 
         width: 100%;
+        
        
 
  .container1 {
-      margin-top: 60px;
-      padding-top: -10px;
+      color: white;
+      margin-top: 50px;
       padding-bottom: 40px;
       background-color: #825D66;
    }
