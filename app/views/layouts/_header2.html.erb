@@ -1,6 +1,18 @@
-<ul class="nav nav-pills">
-    <li><%= link_to "sign in", signin_path %></li>
-    <li><%= link_to "Home", root_path %></li>
-</ul>
-     	
-   
+<header class="navbar navbar-fixed navbar-inverse">
+   <div class="navbar-inner">
+     <div class="container2">
+       <%= Time.now.strftime("%d %b. %Y") %>
+       <div class= "text-center">
+       <%= @page_title || "Expense Management" %>
+      
+      <nav>
+        <ul class="nav nav-pills pull-right ">
+         <li><%= link_to "Home", root_path %></li>
+         <li><%= link_to "sign in", signin_path %></li>
+        </ul>
+      </nav>
+     </div>
+    </div>
+  </div>
+</header>
+

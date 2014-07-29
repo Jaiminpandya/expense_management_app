@@ -1,4 +1,6 @@
 class ExpensescountersController < ApplicationController
+
+
   # GET /expensescounters
   # GET /expensescounters.json
   def index

@@ -12,15 +12,7 @@
     <%= render 'layouts/shim'%>
 </head>
 <body class='<%= controller.controller_name %>'>
-<div id="banner">
-  <%= @page_title || "Expense Management" %>
-</div>
-
-<div class = "date1">
-  <%= Time.now.strftime("%d %b. %Y") %>
-</div>
-
-  <%= render 'layouts/header2' %>
+<%= render 'layouts/header2' %>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>

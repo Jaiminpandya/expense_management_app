@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -8,8 +9,8 @@ class SessionsController < ApplicationController
        sign_in user
        redirect_to user
     else
-       flash.now[:error] = 'Invalid email/password combination'
        render 'new'
+       flash.now[:error] = 'Invalid email/password combination'
     end
   end
   
