@@ -1,3 +1,38 @@
 // Place all the styles related to the expensescounters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.expensescounter {
+  .item_price, .total_line {
+      text-align: right; 
+  }
+
+  .total_line .total_cell {
+     font-weight: bold;
+     border-top: 1px solid #595;
+     font-size: 8px;
+  }
+}
+
+table, td, th { 
+    border: 1px solid black;
+    margin-left: 20px;
+  }
+ table { 
+     height: 100%;
+   }
+ 
+ h2 { 
+   font-size: 20px;
+   margin-left: 20px;
+  }
+
+ .navbar { 
+      width: 100%;
+
+  .container2 {
+     padding-bottom: 40px;
+     padding-right: 0.75em;
+      }
+   }

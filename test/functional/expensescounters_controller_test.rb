@@ -41,9 +41,10 @@ class ExpensescountersControllerTest < ActionController::TestCase
 
   test "should destroy expensescounter" do
     assert_difference('Expensescounter.count', -1) do
+      session[:expensescounter_id] = @expensescounter.id
       delete :destroy, id: @expensescounter
     end
 
-    assert_redirected_to expensescounters_path
+    assert_redirected_to store_path
   end
 end

@@ -1,12 +1,32 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
+<%= render 'layouts/dropdown' %>
 
-<h2>Expenses counter</h2>
-<ul>
-  <% @expensescounter.line_items.each do |item| %>
-    <li><%= item.quantity.title %></li>
-  <% end %>
-</ul>
+
+
+
+<h2>Calculation of expenses</h2>
+<table class= "counting">
+   <% @expensescounter.line_items.each do |item| %>
+     <tr>
+        <td><%= item.expense %>&times;</td>
+        <td><%= item.quantity.title %></td>
+        <td class="item_price"><%= number_to_currency(item.total_price, :unit => "Rs. " ) %></td>
+     </tr>
+    <% end %>
+   <tr class="total_line">
+     <td colspan="2">Total</td>
+     <td class="total_cell"><%= number_to_currency(@expensescounter.total_price, :unit => "Rs. " ) %></td>
+   </tr>
+ </table>
+
+<p></p>
+<p></p>
+<%= link_to 'Empty expensecounter', @expensescounter, method: :delete,
+data: { confirm: 'Are you sure?' } %>
+
+<p></p>
+<p></p>
+
+<%= link_to 'Back', '/manageexpense' %>
+
 
 

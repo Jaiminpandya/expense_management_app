@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:edit, :update]
+  before_filter :signed_in_user, only: [:edit, :update, :destroy]
   before_filter :correct_user, only: [:edit, :update]
 
-  def show
+
+  def new
+    @user = User.new
+  end
+
+ def show
     @user = User.find(params[:id])
 
      respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
     end
-  end
-
-  def new
-    @user = User.new
   end
 
    def create
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
   end
 
   def update
@@ -43,11 +44,26 @@ class UsersController < ApplicationController
          format.json { head :no_content }
        else
         format.html { render action: "edit" }
-        format.json { render json: @user.errors, 
+        format.json { render json: @user.errors,
            status: :unprocessable_entity }
      end
     end
   end
+
+   def destroy
+    @user = User.find(params[:id])
+    begin
+      @user.destroy
+      flash[:notice] = "User #{@user.name} deleted"
+    rescue Exception => e
+      flash[:notice] = e.message
+    end
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+    end
+  end
+
  
   private
   

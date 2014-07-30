@@ -44,13 +44,13 @@ class LineItemsController < ApplicationController
   def create
     @expensescounter = current_expensescounter
     quantity = Quantity.find(params[:quantity_id])
-    @line_item = @expensescounter.line_items.build
+    @line_item = @expensescounter.add_quantity(quantity.id)
     @line_item.quantity = quantity
 
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.expensescounter, notice: 'Line item was successfully created.' }
+        format.html { redirect_to @line_item.expensescounter }
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }

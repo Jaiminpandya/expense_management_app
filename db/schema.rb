@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140727061154) do
+ActiveRecord::Schema.define(:version => 20140729132652) do
 
   create_table "expensescounters", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(:version => 20140727061154) do
   create_table "line_items", :force => true do |t|
     t.integer  "quantity_id"
     t.integer  "expensescounter_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "expense",            :default => 1
   end
 
   create_table "quantities", :force => true do |t|
