@@ -6,6 +6,4 @@ class StoreController < ApplicationController
 
   def report
   end
- 
-  
 end

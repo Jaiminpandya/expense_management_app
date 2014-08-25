@@ -1,4 +1,4 @@
-class CreateExpensescounters < ActiveRecord::Migration
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             class CreateExpensescounters < ActiveRecord::Migration
   def change
     create_table :expensescounters do |t|
 

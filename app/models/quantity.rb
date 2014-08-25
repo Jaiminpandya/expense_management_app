@@ -1,7 +1,9 @@
 class Quantity < ActiveRecord::Base
-  has_many :line_items
-  before_destroy :ensure_not_referenced_by_any_line_item
   attr_accessible :price, :title, :day, :month, :year, :expense_on
+  has_many :line_items
+
+  before_destroy :ensure_not_referenced_by_any_line_item
+
   validates :day, :month, :year, presence: true
   validates :title, presence: true, length: { minimum: 8, message: 'must be eight characters long.'}
   validates :title, uniqueness: true

@@ -11,12 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140729132652) do
+ActiveRecord::Schema.define(:version => 20140801042504) do
 
   create_table "expensescounters", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
+
+  add_index "expensescounters", ["user_id", "created_at"], :name => "index_expensescounters_on_user_id_and_created_at"
 
   create_table "line_items", :force => true do |t|
     t.integer  "quantity_id"

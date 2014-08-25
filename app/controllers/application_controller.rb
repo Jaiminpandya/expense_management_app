@@ -5,10 +5,12 @@ class ApplicationController < ActionController::Base
 
   private
     def current_expensescounter
+      logger.info "expensescounter_id is #{(session[:expensescounter_id])}"
       Expensescounter.find(session[:expensescounter_id])
-    rescue ActiveRecord::RecordNotFound
+       rescue ActiveRecord::RecordNotFound
        expensescounter = Expensescounter.create
        session[:expensescounter_id] = expensescounter.id
        expensescounter
-    end
-end
+      end
+ end
+

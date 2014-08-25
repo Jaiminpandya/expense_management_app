@@ -48,7 +48,6 @@ class ExpensescountersController < ApplicationController
   # POST /expensescounters.json
   def create
     @expensescounter = Expensescounter.new(params[:expensescounter])
-
     respond_to do |format|
       if @expensescounter.save
         format.html { redirect_to @expensescounter, notice: 'Expensescounter was successfully created.' }

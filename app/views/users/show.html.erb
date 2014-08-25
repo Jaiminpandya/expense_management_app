@@ -20,8 +20,16 @@ An administrator account has been created for you, with the following mail addre
       </h1>
     </section>
   </aside>
+  <div class="span8">
+    <% if !@user.expensescounters.any? %>
+      <h3>Your Expenses (<%= @user.expensescounters.count %>)</h3>
+      <ol class="expensescounters">
+        <%= render @expensescounters %>
+      </ol>
+    <% end %>
+  </div>
 </div>
 
 <p></p>
 <p></p>
-<p> You can start to manage expense from here:<strong><%= link_to "click here", quantities_path %></strong></p>
+<p> You can start to manage expense from here:<strong><%= link_to "click here", '/manageexpense' %></strong></p>

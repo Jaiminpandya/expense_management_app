@@ -7,7 +7,7 @@
     <th></th>
   </tr>
 
-<% @expensescounters.each do |expensescounter| %>
+<% @expensescounter = Expensescounter.find(params[:expensescounter_id]) do |expensescounter| %>
   <tr>
     <td><%= link_to 'Show', expensescounter %></td>
     <td><%= link_to 'Edit', edit_expensescounter_path(expensescounter) %></td>

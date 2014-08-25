@@ -1,5 +1,4 @@
 class LineItemsController < ApplicationController
- 
 
   # GET /line_items
   # GET /line_items.json
@@ -44,13 +43,15 @@ class LineItemsController < ApplicationController
   def create
     @expensescounter = current_expensescounter
     quantity = Quantity.find(params[:quantity_id])
-    @line_item = @expensescounter.add_quantity(quantity.id)
-    @line_item.quantity = quantity
-
-
+     @line_item = @expensescounter.add_quantity(quantity.id)
+     @line_item.quantity = quantity
+     
+     logger.debug @line_item.inspect
+     logger.debug "expensescounter_id is #{params[:expensescounter_id]}"
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.expensescounter }
+        logger.info ( "expensescounter is: #{@line_item.expensescounter}" )
+        format.html { redirect_to @line_item.expensescounter } 
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }
