@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
- 
-  has_many :expensescounters, dependent: :destroy
   
+  
+  has_many :expensescounters, dependent: :destroy
+  has_many :line_items, through: :expensescounters
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -16,6 +17,11 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+   def total_price
+     quantity.price.to_s.to_d * expense.to_s.to_d
+  end
+
+  
 
   private
  

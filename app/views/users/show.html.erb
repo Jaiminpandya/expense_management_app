@@ -19,13 +19,21 @@ An administrator account has been created for you, with the following mail addre
       </h1>
     </section>
   </aside>
+ 
   <div class="span8">
-    <% if !@user.expensescounters.any? %>
-      <h3>Your Expenses (<%= @user.expensescounters.count %>)</h3>
-      <ol class="expensescounters">
-        <%= render @expensescounters %>
-      </ol>
-    <% end %>
+  
+   <% if @user.expensescounters.any? %>
+   <table>
+         <tr class="total_line">
+           <td colspan="2">Total</td>
+           <% @user.expensescounters.each do |expensescounter| %>
+           <td class="total_cell"><%= link_to 'Show', expensescounter %></td>
+           <% end %>
+          </tr>
+     </table>
+      
+     <% end %>
+  
   </div>
 </div>
 

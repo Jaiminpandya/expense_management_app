@@ -1,5 +1,6 @@
 class ExpensescountersController < ApplicationController
-
+  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :correct_user, only: :destroy
 
   # GET /expensescounters
   # GET /expensescounters.json
@@ -31,7 +32,8 @@ class ExpensescountersController < ApplicationController
   # GET /expensescounters/new
   # GET /expensescounters/new.json
   def new
-    @expensescounter = Expensescounter.new
+
+    @expensescounter = Expensescounter.new(params[:expensescounter])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,12 +49,17 @@ class ExpensescountersController < ApplicationController
   # POST /expensescounters
   # POST /expensescounters.json
   def create
-    @expensescounter = Expensescounter.new(params[:expensescounter])
+     @user = current_user
+     @expensescounter = @user.expensescounters.build(params[:expensescounter])
+     
+    
     respond_to do |format|
       if @expensescounter.save
-        format.html { redirect_to @expensescounter, notice: 'Expensescounter was successfully created.' }
+         Expensescounter.destroy(session[:expensescounter_id])
+        format.html { redirect_to users_url, notice: 'Expensescounter was successfully created.' }
         format.json { render json: @expensescounter, status: :created, location: @expensescounter }
       else
+        @expensescounter = current_expensescounter
         format.html { render action: "new" }
         format.json { render json: @expensescounter.errors, status: :unprocessable_entity }
       end
@@ -69,6 +76,7 @@ class ExpensescountersController < ApplicationController
         format.html { redirect_to @expensescounter, notice: 'Expensescounter was successfully updated.' }
         format.json { head :no_content }
       else
+            
         format.html { render action: "edit" }
         format.json { render json: @expensescounter.errors, status: :unprocessable_entity }
       end
@@ -83,8 +91,19 @@ class ExpensescountersController < ApplicationController
     session[:expensescounter_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to store_index_path, notice: 'Your cart is currently empty' }
+      format.html { redirect_to @expensescounter, notice: 'Your cart is currently empty' }
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def current_user
+    @current_user ||= User.find_by_remember_token(cookies[:remember_token])
+  end
+  
+   def correct_user
+      @expensescounter = current_user.expensescounters.find_by_id(params[:id])
+      redirect_to root_url if @expensescounter.nil?
+   end
 end

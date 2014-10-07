@@ -1,6 +1,9 @@
 class Quantity < ActiveRecord::Base
   attr_accessible :price, :title, :day, :month, :year, :expense_on
   has_many :line_items
+  has_many :quantities, through: :line_items
+  
+  
 
   before_destroy :ensure_not_referenced_by_any_line_item
 

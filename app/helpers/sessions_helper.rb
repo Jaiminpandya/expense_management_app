@@ -21,9 +21,9 @@ module SessionsHelper
   end
 
    def signed_in_user
-      unless User.find_by_id(session[:user_id])
+      unless signed_in?
         store_location
-        redirect_to signin_path, notice: "Please sign in." 
+        redirect_to signin_url, notice: "Please sign in." 
       end
     end
 

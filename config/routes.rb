@@ -9,9 +9,9 @@ ExpenseManagement::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
  
-  resources :users  
+  resources :users 
      
-  resources :expensescounters
+  resources :expensescounters, only: [:create, :destroy]
   resources :line_items
 
 

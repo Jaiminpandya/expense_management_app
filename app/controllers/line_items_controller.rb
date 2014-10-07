@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  before_filter :signed_in_user
 
   # GET /line_items
   # GET /line_items.json
