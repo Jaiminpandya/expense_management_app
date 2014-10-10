@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_filter :correct_user, only: [:show, :edit, :update]
  
   def show
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
+    @expensescounter = @user.expensescounters.paginate(page: params[:page])
   end
 
   def new
@@ -17,10 +18,11 @@ class UsersController < ApplicationController
 
    def create
     @user = User.new(params[:user])
+
     respond_to do |format|
     if @user.save
-       sign_in @user
-       format.html { redirect_to @user,
+       
+       format.html { redirect_to users_path,
           notice: "User #{@user.name} was successfully created." }
        format.json { render json: @user,
           status: :created, location: @user }
@@ -58,7 +60,7 @@ class UsersController < ApplicationController
    def destroy
       User.find(params[:id]).destroy
       flash[:success] = "User destroyed."
-      redirect_to users_path
+      redirect_to users_url
    end
 
  

@@ -11,5 +11,7 @@ class ApplicationController < ActionController::Base
        session[:expensescounter_id] = expensescounter.id
        expensescounter
       end
+
+     
  end
 

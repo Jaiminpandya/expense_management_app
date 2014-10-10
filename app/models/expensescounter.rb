@@ -1,15 +1,13 @@
 class Expensescounter < ActiveRecord::Base
-  attr_accessible :user_id
+
   
   has_many :line_items, dependent: :destroy 
-  has_many :expensescounters, through: :line_items
   belongs_to :user
+ 
+    
+  default_scope order: 'expensescounters.created_at DESC'
 
-  
-  
-
-
-  def add_quantity(quantity_id)
+ def add_quantity(quantity_id)
     current_item = line_items.find_by_quantity_id(quantity_id)
     if current_item
        current_item.expense += 1

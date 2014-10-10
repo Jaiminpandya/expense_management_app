@@ -1,19 +1,15 @@
 ExpenseManagement::Application.routes.draw do
-  get "users/new"
-
   root to: 'quantities#home'
- 
+  get "users/new"
+   resources :users    
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin', to: 'sessions#new'
   match '/signup', to: 'users#new'
   match '/signout', to: 'sessions#destroy', via: :delete
-
  
-  resources :users 
      
-  resources :expensescounters, only: [:create, :destroy]
+  resources :expensescounters
   resources :line_items
-
 
   get "store/index"
   match '/manageexpense', to: 'store#index'
@@ -24,8 +20,10 @@ ExpenseManagement::Application.routes.draw do
     get 'daywisereport'
     get 'monthwisereport'
     get 'yearwisereport'
+    get 'home'
    end
   end
+
 
   get "store/report"
 
@@ -40,7 +38,7 @@ ExpenseManagement::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  # Sample resource route ():
   #   resources :products
 
   # Sample resource route with options:
@@ -73,7 +71,7 @@ ExpenseManagement::Application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+  #     resources :productsmaps HTTP verbs to controller actions automatically
   #   end
 
   # You can have the root of your site routed with "root"

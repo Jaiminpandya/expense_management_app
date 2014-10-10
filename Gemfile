@@ -5,6 +5,7 @@ gem 'rails', '3.2.16'
 gem 'bootstrap-sass', '2.1'
 gem "watu_table_builder", :require => "table_builder", :git => "git://github.com/watu/table_builder.git"
 gem 'bcrypt-ruby', '3.0.1'
+gem 'will_paginate', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

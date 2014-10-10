@@ -2,6 +2,7 @@ class QuantitiesController < ApplicationController
   before_filter :signed_in_user, only: [:new, :create]
   # GET /quantities
   # GET /quantities.json
+
   def index
     @quantities = Quantity.search(params[:search])
 
@@ -99,5 +100,6 @@ class QuantitiesController < ApplicationController
  end
 
  def home
+   @micropost = current_user.expensescounters.build if signed_in?
   end
 end

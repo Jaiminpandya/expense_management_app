@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   
   
   has_many :expensescounters, dependent: :destroy
-  has_many :line_items, through: :expensescounters
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

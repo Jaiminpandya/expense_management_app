@@ -21,18 +21,16 @@ An administrator account has been created for you, with the following mail addre
   </aside>
  
   <div class="span8">
-  
-   <% if @user.expensescounters.any? %>
-   <table>
-         <tr class="total_line">
-           <td colspan="2">Total</td>
-           <% @user.expensescounters.each do |expensescounter| %>
-           <td class="total_cell"><%= link_to 'Show', expensescounter %></td>
-           <% end %>
-          </tr>
-     </table>
-      
-     <% end %>
+    <% if @user.expensescounters.any? %>
+      <h3>Expenses (<%= @user.expensescounters.count %>)</h3>
+    <ol>
+   <% @user.expensescounters.each do |expensescounter| %>
+  <tr>
+    <td><%= link_to 'show', expensescounter %></td> 
+     </tr>
+      </ol>
+       <% end %>
+      <% end %>
   
   </div>
 </div>
